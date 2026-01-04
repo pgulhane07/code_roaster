@@ -23,15 +23,13 @@ Smart Fixes: Beyond the jokes, the AI provides actual corrected code snippets an
 1. The Setup
 Choose a persona and paste your code snippet. The interface is clean and simple.
 
-![Code window](https://file%2B.vscode-resource.vscode-cdn.net/Users/piyushgulhane/Documents/projects/relatecx_task/demo%20images/code%20box.png?version%3D1767567203379)
-
+![Code window](demo%20images/code%20box.png)
 
 
 2. The Critical Failure (Interactive Twist)
 If the AI detects a code-breaking runtime error (like while(true) without a break), the application reacts dramatically before showing the results.
 
-![Crtical Failure Explosion](https://file%2B.vscode-resource.vscode-cdn.net/Users/piyushgulhane/Documents/projects/relatecx_task/demo%20images/explosion.png?version%3D1767567245115)
-
+![Crtical Failure Explosion](demo%20images/explosion.png)
 
 3. The Verdict (The Dashboard)
 The results are displayed in a prioritized list.
@@ -44,7 +42,7 @@ Bottom: Cosmetic Roasts.
 
 Each card contains a witty one-liner (the roast) and an expandable "Fix" section with the technical solution.
 
-![Code Roast and Fix](https://file%2B.vscode-resource.vscode-cdn.net/Users/piyushgulhane/Documents/projects/relatecx_task/demo%20images/roast%20and%20fix.png?version%3D1767567396895)
+![Code Roast and Fix](demo%20images/roast%20and%20fix.png)
 
 
 
