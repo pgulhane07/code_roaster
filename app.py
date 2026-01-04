@@ -12,6 +12,7 @@ st.markdown("""
     But if you cry, I might help you fix it.
 """)
 
+#Selcting the persona of reviewer
 st.sidebar.header("Choose Your Judge")
 persona = st.sidebar.selectbox(
     "Who is reviewing your code?",
@@ -23,25 +24,27 @@ persona = st.sidebar.selectbox(
     ]
 )
 
+# Past code here
 user_code = st.text_area("Paste your code here:", height=200, placeholder="def spaghetti_code(): ...")
+
 
 if st.button("Judge Me"):
     if not user_code:
         st.warning("Paste some code first. I can't roast nothingness.")
     else:
-        with st.spinner("Analyzing your incompetence..."):
+        with st.spinner("No offense in advance, 'just facts'"):
             
-            
+            #get AI response
             data = get_roast_and_fix(user_code, persona)
             
             if "critiques" in data:
                 reviews = data["critiques"]
                 
-               
+               #sort on level of issue
                 priority_map = {"fatal": 0, "warning": 1, "cosmetic": 2}
                 reviews.sort(key=lambda x: priority_map.get(x["category"], 3))
                 
-                
+                #display explosion gif
                 if any(r['category'] == 'fatal' for r in reviews):
                     placeholder = st.empty()
                     with placeholder.container():
@@ -58,6 +61,7 @@ if st.button("Judge Me"):
                     time.sleep(3.5)
                     placeholder.empty()
 
+                #show the roast and review
                 for review in reviews:
                     cat = review['category']
                     

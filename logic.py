@@ -18,7 +18,7 @@ def get_roast_and_fix(user_code, persona):
         "temperature": 0.7,
         "response_mime_type": "application/json",
     }
-
+    # Selecting the model
     model = genai.GenerativeModel(
         # model_name="gemini-1.5-flash",
         model_name="gemini-2.5-flash",
@@ -70,7 +70,7 @@ def get_roast_and_fix(user_code, persona):
         
     }}
     """
-
+    #returning response to UI
     try:
         response = model.generate_content(prompt)
         return json.loads(response.text)
