@@ -47,14 +47,23 @@ def get_roast_and_fix(user_code, persona):
     5. Do not offer help in the roast. Save that for the fix.
 
     
+    Identify issues and categorize them STRICTLY into these 3 types:
     
+    1. "fatal" (Red): RUNTIME CRASHES. Logic that allows the code to start but causes it to crash or freeze later.
+       - Examples: Infinite loops, Divide by Zero, Index Out of Bounds, Recursion Depth Exceeded.
+       
+    2. "warning" (Orange): COMPILER/SYNTAX ERRORS. Issues that prevent the code from running at all.
+       - Examples: SyntaxError, IndentationError, NameError (undefined variables), Import errors.
+       
+    3. "cosmetic" (Green): Style issues.
+       - Examples: Bad variable names (x, y), missing comments, ugly formatting, unused imports (that don't crash).
 
     Return a JSON object with a SINGLE key "critiques" which is a list of objects.
     Each object must follow this schema:
     {{
         
         "line" : "The line number (e.g., 5) or 'General'",
-        "fatal" : Boolean,
+        "category": "cosmetic" OR "warning" OR "fatal",
         "roast": "The single-line witty roast",
         "fix_explanation": "Brief explanation of the error",
         "fixed_code": "The corrected code snippet"
